@@ -12,7 +12,6 @@ Platform web interaktif yang dirancang untuk membantu mahasiswa memahami materi 
 ---
 
 ## 📸 Tampilan Proyek
-Berikut adalah tangkapan layar proyek Anda:
 
 ![Tampilan Website](./src/assets/projek1.png)
 
