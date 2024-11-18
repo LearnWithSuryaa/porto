@@ -12,30 +12,38 @@ const HeroSection = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(100);
+  const [pause, setPause] = useState(false);  // New state to manage pause before deleting
 
   useEffect(() => {
     const handleTyping = () => {
       const currentText = toRotate[loopNum];
+      if (pause) {
+        // Wait for a while before starting to delete
+        setTimeout(() => setIsDeleting(true), 1000);  // 1-second pause before starting to delete
+        setPause(false);
+        return;
+      }
+
       if (isDeleting) {
         setText((prev) => prev.substring(0, prev.length - 1));
+        setDelta(250);  // Slow down while deleting
       } else {
         setText((prev) => currentText.substring(0, prev.length + 1));
+        setDelta(50);  // Speed up while typing
       }
 
       if (!isDeleting && text === currentText) {
-        setIsDeleting(true);
-        setDelta(100);
+        setPause(true);  // Start the pause when typing is complete
       } else if (isDeleting && text === "") {
         setIsDeleting(false);
         setLoopNum((prev) => (prev + 1) % toRotate.length);
-        setDelta(1000);
       }
     };
 
     const typingTimeout = setTimeout(handleTyping, delta);
 
     return () => clearTimeout(typingTimeout);
-  }, [text, isDeleting, loopNum, delta, toRotate]);
+  }, [text, isDeleting, loopNum, delta, toRotate, pause]);
 
   return (
     <main
