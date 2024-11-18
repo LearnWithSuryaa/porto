@@ -8,7 +8,7 @@ const projects = [
     description:
       "Jelajahi proyek-proyek saya yang menggabungkan keahlian front-end seperti React dengan kekuatan back-end menggunakan Node.js dan Django. Setiap karya dirancang dengan fokus pada efisiensi, performa, dan skalabilitas untuk menciptakan solusi teknologi yang inovatif.",
     techStack: "React, Tailwind CSS",
-    imageUrl: "../src/assets/projek1.png",
+    imageUrl: "/image/projek1.png",
     liveUrl: "#",
     repoUrl: "#",
     comingSoon: false,

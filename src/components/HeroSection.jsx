@@ -68,7 +68,7 @@ const HeroSection = () => {
           height="300"
           decoding="async"
           className="w-3/4 max-w-[400px] md:w-[300px] md:max-w-[400px] md:h-auto rounded-full border-4 border-sky-300 shadow-lg shadow-sky-300 object-cover"
-          src="../src/assets/hero.jpeg"
+          src="/image/hero.jpeg"
         />
       </div>
     </main>

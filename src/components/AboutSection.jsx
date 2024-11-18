@@ -32,7 +32,7 @@ const AboutSection = () => {
         >
           <div className="relative w-56 h-56 md:w-64 md:h-64">
             <img
-              src="../src/assets/hero.jpeg" 
+              src="/image/hero.jpeg" 
               alt="Profile"
               className="rounded-full w-full h-full border-4 border-sky-400 shadow-lg"
             />
